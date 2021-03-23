@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 #api
-axios.js
+/src/axios.js
+/src/requests.js
