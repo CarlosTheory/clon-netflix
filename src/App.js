@@ -1,15 +1,15 @@
 import './App.css';
 import Row from './Row';
 import Banner from './Banner';
+import Nav from './Nav';
 
 import requests from './requests';
 
 function App() {
   return (
     <div className="App">
-      {/* {NavBar} */}
+      <Nav />
       <Banner />
-      <h1>Netflix clon frontend</h1>
       <Row title="Originals by Netflix" obtainUrl={requests.obtainNetflixOriginals} isLargeRow/>
       <Row title="Trending Now" obtainUrl={requests.obtainTrending}/>
       <Row title="Top Rated" obtainUrl={requests.obtainTopRated}/>
