@@ -2,6 +2,7 @@ import './App.css';
 import Row from './Row';
 import Banner from './Banner';
 import Nav from './Nav';
+import Footer from './Footer';
 
 import requests from './requests';
 
@@ -18,6 +19,7 @@ function App() {
       <Row title="Horror Movies" obtainUrl={requests.obtainHorrorMovies}/>
       <Row title="Romance Movies" obtainUrl={requests.obtainRomanceMovies}/>
       <Row title="Documentary" obtainUrl={requests.obtainDocumentaries}/>
+      <Footer author="@carlostheory" project_url="https://github.com/CarlosTheory/clon-netflix"></Footer>
     </div>
   );
 }
