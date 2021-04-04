@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.css';
 import account_img from './assets/account.svg';
-import netflix_logo from './assets/netflix_logo.svg'
+import netflix_logo from './assets/movify.svg'
 
 function Nav(){
     const [show, handleShow] = useState(false);
