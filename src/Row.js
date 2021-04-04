@@ -36,14 +36,13 @@ function Row({title, obtainUrl, isLargeRow}) {
         if (trailerUrl){ //If it is already open, close it
             setTrailerUrl('');
         } else {
-            movieTrailer(movie.name || "", {apiKey:API_KEY}).then(url => {
+            movieTrailer(null, {tmdbId:movie.id, apiKey:API_KEY}).then(url => {
                 console.log(url);
                 const urlParams = new URLSearchParams(new URL(url).search);
                 console.log(urlParams);
                 setTrailerUrl(urlParams.get('v'));
             }).catch(error => console.log(error));
         }
-
     }
 
     //console.table(movies);
@@ -57,7 +56,8 @@ function Row({title, obtainUrl, isLargeRow}) {
                     <img key={movie.id} className={`row__film ${isLargeRow && "row__posterLarge"}`} src={`${baseUrlImage}${isLargeRow? movie.poster_path : movie.backdrop_path}`} alt={movie.name? movie.name : movie.title} onClick={() => handleClick(movie)}/>
                 ))}
             </div>
-            {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}
+            {console.log("trailer ", trailerUrl)}
+            {trailerUrl.length > 0 &&  <YouTube videoId={trailerUrl} opts={opts}/>}
         </div>
     );
 }
